@@ -10,9 +10,9 @@ In addition, a user also have basic info, such as id (username), password, name,
 ## Database design
 For the database modeling, I used the [Merise](https://en.wikipedia.org/wiki/Merise) methodology.
 ### Conceptual model
-![Conceptual model diagram](/database/design-MCD.drawio.svg) 
+![Conceptual model diagram](/assets/images/design-MCD.drawio.svg) 
 ### Logic model
-![Logic model diagram](/database/design-MLD.drawio.svg) 
+![Logic model diagram](/assets/images/design-MLD.drawio.svg) 
 
 Translation:
 - Utilisateur : User
@@ -24,4 +24,4 @@ Translation:
 
 ## Backend
 The backend code is written in Java EE 8 and ran on apache tomcat 9. The app is intended to be a REST API, it's therefor composed of one ***servlet*** (/backend/UtilisateursServlet.java) whose job is to define the app's behavior when it recieves a request. The requests that the servelet deals with are of type HTTP, and use the methods GET, POST, PUT and DELETE methods to respectively retrive, add, update and delete data from the database. The behavior of the app is defined in 4 methods, doGet(), doPost(), doPut() and doDelete(), one of which will be called at each HTTP request, depending on the request's method.
-
+![Servelet methods](/assets/images/servlet.png) 
