@@ -49,3 +49,6 @@ The interface is not hosted in a server, it uses the Ajax technology to send req
 ![Interface screenshot](/assets/images/interface_ajouter1.PNG)
 ![Interface screenshot](/assets/images/interface_ajouter2.PNG)
 ![Interface screenshot](/assets/images/interface_ajouter3.PNG)
+
+## Conclusion
+This project was an opportunity for me to practice my software engineering skills such as Java, JavaScript, design patterns, etc. and to explore previously unknown technologies like RESTful apis, Json and Ajax. It evidently still needs a lot of work to be ready for production, but it was an enriching experience.
