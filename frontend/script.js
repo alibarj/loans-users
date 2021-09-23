@@ -210,7 +210,7 @@ function getUsersInfo(){
 		
 
 //This function defines the 'afficher' button's behavior; show (or hide) a user's events table
-function "getEvenements"(){
+function getEvenements(){
 
 			let nestedTable = this.nextSibling;
 			if (nestedTable.hidden){
