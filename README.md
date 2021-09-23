@@ -35,4 +35,4 @@ All data transactions are in JSON format, this means that requests bodies must b
 I adopted this approach to anticipate possible changes in data exchange formats.
 
 ### Architecture summary
-![Servelet methods](design-Architecture.drawio.svg)
+![Servelet methods](/assets/images/design-Architecture.drawio.svg)
