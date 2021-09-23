@@ -21,6 +21,9 @@ Translation:
 - Contenir : Contain
 - Effectuer : perform
 - Appartenir : Belong
+- Service : Department
+
+The database is implemented in MySQL, implementation script is in /database/script.sql.
 
 ## Backend
 The backend code is written in Java EE 8 and ran on apache tomcat 9. The app is intended to be a REST API, it's therefor composed of one ***servlet*** (/backend/UtilisateursServlet.java) whose job is to define the app's behavior when it recieves a request. The requests that the servelet deals with are of type HTTP, and use the methods GET, POST, PUT and DELETE methods to respectively retrive, add, update and delete data from the database. The behavior of the app is defined in 4 methods, doGet(), doPost(), doPut() and doDelete(), one of which will be called at each HTTP request, depending on the request's method.
@@ -31,8 +34,18 @@ The backend code is written in Java EE 8 and ran on apache tomcat 9. The app is 
 Connection with the database is carried out by a JDBC driver. The connection to the database, and sql statements and executions are encapsulated using the DAO (Data Access Object) design pattern (/backend/dao). Data persistence is ensured with java beans (/backend/beans).
 
 ### Data exchange format
-All data transactions are in JSON format, this means that requests bodies must be JSON strings, and responses returned by the servelt are also JSON strings. For this purpose, I introduced the /backend/Serializable.java interface whose job is to serialize a Java object to a string format and deserialize a string format to a java object, and an implementation (/database/JsonSerializer.java) that serializes and deserializes to JSON format.
+All data transactions via HTTP are in JSON format, this means that requests bodies must be JSON strings, and responses returned by the servelt are also JSON strings. For this purpose, I introduced the /backend/Serializable.java interface whose job is to serialize a Java object to a string format and deserialize a string format to a java object, and an implementation (/database/JsonSerializer.java) that serializes and deserializes to JSON format.
 I adopted this approach to anticipate possible changes in data exchange formats.
 
 ### Architecture summary
 ![Servelet methods](/assets/images/design-Architecture.drawio.svg)
+
+## Frontend
+After successful testing with the Postman software, I built a frontend client for the API using HTML5, Bootstrap, and JavaScript. The client is a single-page interface that gives the ability to display all users in the database, add a new user, and delete an existing user (updating a user is not yet implemented).
+The interface is not hosted in a server, it uses the Ajax technology to send requests and recieve responses from the api.
+![Interface screenshot](/assets/images/interface_main.PNG)
+![Interface screenshot](/assets/images/interface_consulter1.PNG)
+![Interface screenshot](/assets/images/interface_consulter2.PNG)
+![Interface screenshot](/assets/images/interface_ajouter1.PNG)
+![Interface screenshot](/assets/images/interface_ajouter2.PNG)
+![Interface screenshot](/assets/images/interface_ajouter3.PNG)
